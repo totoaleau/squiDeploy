@@ -1,0 +1,11 @@
+---
+- hosts: tpot_server1
+  # Run commands as root
+  become: true
+  # Roles to be executed on these hosts
+  roles:
+    - role: git/install
+      tags: install
+
+    # - role: tpot\install
+    #   tags: check
