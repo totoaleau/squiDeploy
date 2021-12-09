@@ -86,7 +86,7 @@ Vagrant.configure("2") do |config|
     # The path to the playbooks entry point
     ansible.playbook = "playbooks/run.yml"
     # Only run the roles with these tags
-    ansible.tags = "install"
+    #ansible.tags = "install"
   end
 
 end
