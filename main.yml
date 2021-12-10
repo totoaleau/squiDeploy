@@ -1,0 +1,48 @@
+---
+- name: tpot_playbook
+  hosts: tpot_server1
+  become: yes
+
+  tasks:
+    - name: "Hello"
+      debug:
+        msg: Hello ansible World !
+
+    - name: "Install net-tools"
+      apt:
+        name: net-tools
+
+    - name: "Install git"
+      apt:
+        name: git
+
+    - name: Cloning T-Pot install directory
+      git:
+        repo: "https://github.com/telekom-security/tpotce.git"
+        dest: /root/tpot
+
+    - name: Copy T-Pot configuration file
+      command: cp /root/tpot/iso/installer/tpot.conf.dist /root/tpot.conf
+
+    - name: Change permissions of tpot config file
+      command: chmod 0644 /root/tpot.conf
+
+    - name: Install T-Pot on instance -  be patient, this might take 15 to 30 minutes depending on the connection speed.
+      command: /root/tpot/iso/installer/install.sh --type=auto --conf=/root/tpot.conf
+
+    - name: Delete T-Pot configuration file
+      command: rm /root/tpot.conf -f
+
+    - name: Change unattended-upgrades to take default action
+      blockinfile:
+        dest: /etc/apt/apt.conf.d/50unattended-upgrades
+        block: |
+          Dpkg::Options {
+            "--force-confdef";
+            "--force-confold";
+          }
+
+    - name: Finally rebooting T-Pot
+      command: shutdown -r now
+      async: 1
+      poll: 0

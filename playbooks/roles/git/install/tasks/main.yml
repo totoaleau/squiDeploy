@@ -1,6 +1,0 @@
----
-- name: Install ntpdate
-  local_action:
-    ansible.builtin.package:
-      name: net-tools
-      state: present

@@ -84,7 +84,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "ansible_local" do |ansible|
     # The path to the playbooks entry point
-    ansible.playbook = "playbooks/run.yml"
+    ansible.playbook = "main.yml"
     # Only run the roles with these tags
     #ansible.tags = "install"
   end
