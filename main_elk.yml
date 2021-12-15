@@ -1,0 +1,147 @@
+---
+- name: tpot_playbook
+  hosts: tpot_server12
+  become: yes
+
+  tasks:
+    - name: Install Packages
+      apt: name= state=latest update_cache=yes
+      with_items:
+        - apt-transport-https
+        - openssl
+        - default-jdk
+        - net-tools
+
+    # - name: Update the /etc/hosts file with node name
+    #   become: yes
+    #   lineinfile:
+    #     dest: "/etc/hosts"
+    #     regexp: ".*{{ item }}$"
+    #     line: "{{ hostvars[item].ansible_host }} {{item}}"
+    #     state: present
+    #   when: hostvars[item].ansible_host is defined
+    #   with_items: "{{groups['es-cluster']}}"
+
+    - name: enable ipv4 routing
+      command: sudo echo 1 > sudo /proc/sys/net/ipv4/ip_forward
+
+    - name: Import the Elastic Key
+      apt_key:
+        url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        state: present
+
+    - name: Adding Elastic APT repository
+      apt_repository:
+        repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
+        state: present
+        filename: elastic-7.x.list
+        update_cache: yes
+
+    - name: install elasticsearch
+      apt:
+        name: elasticsearch
+        state: present
+        update_cache: yes
+
+    - name: reload systemd config
+      systemd: daemon_reload=yes
+
+    # - name: enable service elasticsearch and ensure it is not masked
+    #   systemd:
+    #     name: elasticsearch
+    #     enabled: yes
+    #     masked: no
+
+    # - name: ensure elasticsearch is running
+    #   systemd: state=started name=elasticsearch
+
+    - name: set elasticsearch permissions
+      file:
+        path: /usr/share/elasticsearch
+        state: directory
+        recurse: yes
+        owner: elasticsearch
+        group: elasticsearch
+
+    - name: Add or modify memlock, both soft and hard, limit for elasticsearch user.
+      pam_limits:
+        domain: elasticsearch
+        limit_type: "-"
+        limit_item: memlock
+        value: unlimited
+        comment: unlimited memory lock for elasticsearch
+
+    - name: set LimitMEMLOCK to infinity.
+      lineinfile:
+        path: /usr/lib/systemd/system/elasticsearch.service
+        insertafter: "LimitAS=infinity"
+        line: "LimitMEMLOCK=infinity"
+        state: present
+
+    - name: copying file with playbook
+      copy:
+        src: C:\Users\thoma\Documents\bigdata_project\squiDeploy\elasticsearch.yml
+        dest: /etc/elasticsearch/
+
+    - name: copying file with playbook
+      become: true
+      copy:
+        src: C:\Users\thoma\Documents\bigdata_project\squiDeploy\jvm.options
+        dest: /etc/elasticsearch/
+
+    # - name: restart elasticsearch after change configuration by configure-elastic-file role
+    #   systemd:
+    #     state: restarted
+    #     daemon_reload: yes
+    #     name: elasticsearch
+
+    # - name: ensure elasticsearch is running
+    #   systemd:
+    #     state=started
+    #     name=elasticsearch
+
+    # Install Kibana
+    - name: Update repositories cache and install Kibana
+      apt:
+        name: kibana
+        update_cache: yes
+
+    # Enable Kibana service
+    - name: Enabling Kibana service
+      systemd:
+        name: kibana
+        enabled: yes
+        daemon_reload: yes
+    # Start Kibana service
+    - name: Starting Kibana service
+      systemd:
+        name: kibana
+        state: started
+    - name: Ensure Kibana is running
+      systemd: state=started name=kibana
+    # Installing Logstash
+    # - name: Update repositories cache and install Logstash
+    #   apt:
+    #     name: logstash
+
+    #   # Enable Logstash service
+    # - name: Enable Logstash service
+    #   systemd:
+    #     name: logstash
+    #     enabled: yes
+
+    # # Start Logstash service
+    # - name: Start Logstash service
+    #   systemd:
+    #     name: logstash
+    #     state: started
+    #     daemon_reload: yes
+
+    - name: install filebeat
+      apt:
+        name: filebeat
+
+    # - name: Finally rebooting T-Pot
+    #   command: shutdown -r now
+    #   async: 1
+    #   poll: 0

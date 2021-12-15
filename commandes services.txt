@@ -1,0 +1,68 @@
+procédure conf ES + kibana + logstash
+
+
+ES:
+
+sudo nano /etc/elasticsearch/elasticsearch.yml
+
+décommenter : 
+#network.host: 192.168.0.1 (mettre l'ip bridged)
+#http.port: 9200
+
+ajouter :
+discovery.type: single-node
+
+sudo nano /etc/elasticsearch/jvm.options
+décommenter : 
+#-Xms4g
+#-Xmx4g
+
+sudo /etc/init.d/elasticsearch start
+
+curl -X GET "localhost:9200"
+
+-----------------------------------------------------------
+
+Kibana:
+
+sudo nano /etc/kibana/kibana.yml
+
+décommenter : 
+#server.port: 5601
+#server.host: "your-hostname"
+#elasticsearch.hosts: ["http://localhost:9200"]
+
+sudo /etc/init.d/kibana start
+
+http://localhost:5601
+
+
+-----------------------------------------------------------
+
+Logstash : 
+
+sudo nano /etc/logstash/logstash.yml
+
+décommenter :
+api.http.host: 192.168.233.147
+api.http.port: 5044
+sudo systemctl restart logstash
+netstat -pln
+
+PEUT-ETRE PAS BESOIN DE LOGSTASH, POUR ENVOYER LES FICHIERS JE PEUX ME SERVIR UNIQUEMENT DE FILEBEAT SI TROP COMPLIQUE
+
+-----------------------------------------------------------
+
+Filebeat
+
+sudo nano /etc/filebeat/filebeat.yml
+
+commenter :
+# output.elasticsearch:
+   # Array of hosts to connect to.
+   # hosts: ["localhost:9200"]
+
+décommenter : 
+# output.logstash
+     # hosts: ["localhost:5044"]
+
