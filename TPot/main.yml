@@ -1,6 +1,6 @@
 ---
-- name: tpot_playbook
-  hosts: tpot_server1
+- name: tpot1_playbook
+  hosts: tpot_server11
   become: yes
 
   tasks:
@@ -20,6 +20,11 @@
       git:
         repo: "https://github.com/telekom-security/tpotce.git"
         dest: /root/tpot
+
+    - name: Cloning squiDeploy repo
+      git:
+        repo: "https://github.com/totoaleau/squiDeploy"
+        dest: /home/vagrant/squiDeploy
 
     - name: Copy T-Pot configuration file
       command: cp /root/tpot/iso/installer/tpot.conf.dist /root/tpot.conf
@@ -45,4 +50,33 @@
     - name: Finally rebooting T-Pot
       command: shutdown -r now
       async: 1
-      poll: 0
+      poll:
+        0
+
+        # Install filebeat
+    - name: install filebeat
+      apt:
+        name: filebeat
+
+    - name: copying file with playbook
+      become: true
+      copy:
+        src: /home/vagrant/squiDeploy/TPot/filebeat.yml
+        dest: /etc/filebeat/
+        remote_src: yes
+        force: yes
+
+    # Start filebeat service
+    - name: Enabling filebeat service
+      systemd:
+        name: filebeat
+        enabled: yes
+        daemon_reload: yes
+
+    - name: Starting filebeat service
+      systemd:
+        name: filebeat
+        state: started
+
+    - name: Ensure filebeat is running
+      systemd: state=started name=filebeat

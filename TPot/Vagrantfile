@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
-  config.vm.define "tpot_server1" do |server|
+  config.vm.define "tpot_server11" do |server|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   
-    server.vm.network "public_network"
+    server.vm.network "public_network", ip: "192.168.198.200"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -54,12 +54,12 @@ Vagrant.configure("2") do |config|
       server.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
         vb.gui = true
-        vb.name =  "tpot1.server.local"
+        vb.name =  "tpot11.server.local"
 
   #
   #   # Customize the amount of memory on the VM:
-        vb.memory = "8192"
-        vb.cpus = 4
+        vb.memory = "6144"
+        vb.cpus = 3
       end
   end
 
@@ -84,7 +84,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "ansible_local" do |ansible|
     # The path to the playbooks entry point
-    ansible.playbook = "main_elk.yml"
+    ansible.playbook = "main.yml"
     # Only run the roles with these tags
     #ansible.tags = "install"
   end

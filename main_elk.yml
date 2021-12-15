@@ -151,8 +151,11 @@
     - name: Ensure Kibana is running
       systemd: state=started name=kibana
 
-    # Start filebeat service
+    - name: Sleep for 120 seconds to let kibana start
+      wait_for:
+        timeout: 120
 
+    # Start filebeat service
     - name: Command setup elasticsearch
       command: filebeat setup -e
 
