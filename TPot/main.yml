@@ -47,12 +47,6 @@
             "--force-confold";
           }
 
-    - name: Finally rebooting T-Pot
-      command: shutdown -r now
-      async: 1
-      poll:
-        0
-
         # Install filebeat
     - name: install filebeat
       apt:
@@ -80,3 +74,8 @@
 
     - name: Ensure filebeat is running
       systemd: state=started name=filebeat
+
+    - name: Finally rebooting T-Pot
+      command: shutdown -r now
+      async: 1
+      poll: 0
