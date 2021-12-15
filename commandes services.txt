@@ -55,7 +55,7 @@ PEUT-ETRE PAS BESOIN DE LOGSTASH, POUR ENVOYER LES FICHIERS JE PEUX ME SERVIR UN
 
 Filebeat
 
-sudo nano /etc/filebeat/filebeat.yml
+sudo nano /etc/filebeat/filebeat.ym  l
 
 commenter :
 # output.elasticsearch:
