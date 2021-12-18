@@ -28,8 +28,8 @@
 ## example, to set the heap to 4 GB, create a new file in the
 ## jvm.options.d directory containing these lines:
 ##
--Xms2g
--Xmx2g
+-Xms4g
+-Xmx4g
 ##
 ## See https://www.elastic.co/guide/en/elasticsearch/reference/7.16/heap-size.html
 ## for more information
