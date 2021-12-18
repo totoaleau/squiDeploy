@@ -1,6 +1,6 @@
 ---
-- name: tpot_playbook
-  hosts: tpot_server12
+- name: elk_playbook
+  hosts: elk_server
   become: yes
 
   tasks:
@@ -11,9 +11,6 @@
         - openssl
         - default-jdk
         - net-tools
-
-    - name: enable ipv4 routing
-      command: sudo echo 1 > sudo /proc/sys/net/ipv4/ip_forward
 
     # Install elasticsearch
     - name: Import the Elastic Key
@@ -60,6 +57,7 @@
         line: "LimitMEMLOCK=infinity"
         state: present
 
+    #Retrieving configuration files
     - name: "Install git"
       apt:
         name: git
@@ -69,14 +67,14 @@
         repo: "https://github.com/totoaleau/squiDeploy"
         dest: /home/vagrant/squiDeploy
 
-    - name: copying file with playbook
+    - name: copying file with playbook for elasticsearch
       copy:
         src: /home/vagrant/squiDeploy/elasticsearch.yml
         dest: /etc/elasticsearch/
         remote_src: yes
         force: yes
 
-    - name: copying file with playbook
+    - name: copying file with playbook for elasticsearch
       become: true
       copy:
         src: /home/vagrant/squiDeploy/jvm.options
@@ -90,7 +88,7 @@
         name: kibana
         update_cache: yes
 
-    - name: copying file with playbook
+    - name: copying file with playbook for Kibana
       become: true
       copy:
         src: /home/vagrant/squiDeploy/kibana.yml
@@ -103,7 +101,7 @@
       apt:
         name: filebeat
 
-    - name: copying file with playbook
+    - name: copying file with playbook for FIlebeat
       become: true
       copy:
         src: /home/vagrant/squiDeploy/filebeat.yml
@@ -172,8 +170,3 @@
 
     - name: Ensure filebeat is running
       systemd: state=started name=filebeat
-
-    # - name: Finally rebooting T-Pot
-    #   command: shutdown -r now
-    #   async: 1
-    #   poll: 0

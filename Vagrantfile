@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
-  config.vm.define "tpot_server12" do |server|
+  config.vm.define "elk_server" do |server|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
@@ -54,12 +54,12 @@ Vagrant.configure("2") do |config|
       server.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
         vb.gui = true
-        vb.name =  "tpot12.server.local"
+        vb.name =  "elk.server.local"
 
   #
   #   # Customize the amount of memory on the VM:
         vb.memory = "8192"
-        vb.cpus = 2
+        vb.cpus = 4
       end
   end
 

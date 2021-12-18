@@ -1,13 +1,10 @@
 ---
-- name: tpot1_playbook
-  hosts: tpot_server11
+- name: tpot_playbook
+  hosts: tpot_server1
   become: yes
 
   tasks:
-    - name: "Hello"
-      debug:
-        msg: Hello ansible World !
-
+    #Getting packages
     - name: "Install net-tools"
       apt:
         name: net-tools
@@ -16,6 +13,7 @@
       apt:
         name: git
 
+    #Cloning repos
     - name: Cloning T-Pot install directory
       git:
         repo: "https://github.com/telekom-security/tpotce.git"
@@ -26,6 +24,7 @@
         repo: "https://github.com/totoaleau/squiDeploy"
         dest: /home/vagrant/squiDeploy
 
+    #TPot install
     - name: Copy T-Pot configuration file
       command: cp /root/tpot/iso/installer/tpot.conf.dist /root/tpot.conf
 
@@ -48,6 +47,15 @@
           }
 
         # Install filebeat
+    - name: Command setup elasticsearch
+      command: wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+    - name: Command setup elasticsearch
+      command: echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+
+    - name: Command setup elasticsearch
+      command: sudo apt-get update
+
     - name: install filebeat
       apt:
         name: filebeat
@@ -75,6 +83,7 @@
     - name: Ensure filebeat is running
       systemd: state=started name=filebeat
 
+    #Reboot
     - name: Finally rebooting T-Pot
       command: shutdown -r now
       async: 1
