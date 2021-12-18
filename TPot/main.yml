@@ -48,10 +48,16 @@
 
         # Install filebeat
     - name: Command setup elasticsearch
-      command: wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+      command: wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
     - name: Command setup elasticsearch
-      command: echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+      command: sudo apt-key add -
+
+    - name: Command setup elasticsearch
+      command: echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main"
+
+    - name: Command setup elasticsearch
+      command: sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
 
     - name: Command setup elasticsearch
       command: sudo apt-get update
