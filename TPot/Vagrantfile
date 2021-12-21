@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
   
     server.vm.network "public_network", ip: "192.168.1.200"
 
-    server.vm.network :forwarded_port, guest: 22, host: 64295, id: 'ssh'
+    server.vm.network :forwarded_port, guest: 64295, host: 22, id: 'ssh'
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
