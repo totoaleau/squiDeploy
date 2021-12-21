@@ -69,7 +69,7 @@
 
     - name: copying file with playbook for elasticsearch
       copy:
-        src: /home/vagrant/squiDeploy/elasticsearch.yml
+        src: /home/vagrant/squiDeploy/ELK/elasticsearch.yml
         dest: /etc/elasticsearch/
         remote_src: yes
         force: yes
@@ -77,7 +77,7 @@
     - name: copying file with playbook for elasticsearch
       become: true
       copy:
-        src: /home/vagrant/squiDeploy/jvm.options
+        src: /home/vagrant/squiDeploy/ELK/jvm.options
         dest: /etc/elasticsearch/
         remote_src: yes
         force: yes
@@ -91,7 +91,7 @@
     - name: copying file with playbook for Kibana
       become: true
       copy:
-        src: /home/vagrant/squiDeploy/kibana.yml
+        src: /home/vagrant/squiDeploy/ELK/kibana.yml
         dest: /etc/kibana/
         remote_src: yes
         force: yes
@@ -104,7 +104,7 @@
     - name: copying file with playbook for FIlebeat
       become: true
       copy:
-        src: /home/vagrant/squiDeploy/filebeat.yml
+        src: /home/vagrant/squiDeploy/ELK/filebeat.yml
         dest: /etc/filebeat/
         remote_src: yes
         force: yes
