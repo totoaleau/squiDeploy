@@ -1,8 +1,0 @@
----
-- name: install
-  hosts: tpot_server1
-  become: true
-
-  tasks:
-    - name: oui_net
-      apt_get: name=net-tools state=present

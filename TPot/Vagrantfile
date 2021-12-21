@@ -40,418 +40,422 @@ Vagrant.configure("2") do |config|
   # your network.
   
     server.vm.network "public_network", ip: "192.168.1.200"
+    server.vm.network :forwarded_port, guest: 64294, host: 64294, auto_correct: true
+    server.vm.network :forwarded_port, guest: 64295, host: 64295, auto_correct: true
+    server.vm.network :forwarded_port, guest: 64297, host: 64297, auto_correct: true
 
-    server.vm.network :forwarded_port, guest: 993, host: 993
-    server.vm.network :forwarded_port, guest: 25, host: 25
-    server.vm.network :forwarded_port, guest: 22, host: 22
-    server.vm.network :forwarded_port, guest: 3389, host: 3389
-    server.vm.network :forwarded_port, guest: 80, host: 80
-    server.vm.network :forwarded_port, guest: 995, host: 995
-    server.vm.network :forwarded_port, guest: 23, host: 23
-    server.vm.network :forwarded_port, guest: 110, host: 110
-    server.vm.network :forwarded_port, guest: 135, host: 135
-    server.vm.network :forwarded_port, guest: 21, host: 21
-    server.vm.network :forwarded_port, guest: 143, host: 143
-    server.vm.network :forwarded_port, guest: 3306, host: 3306
-    server.vm.network :forwarded_port, guest: 445, host: 445
-    server.vm.network :forwarded_port, guest: 8080, host: 8080
-    server.vm.network :forwarded_port, guest: 5900, host: 5900
-    server.vm.network :forwarded_port, guest: 1723, host: 1723
-    server.vm.network :forwarded_port, guest: 443, host: 443
-    server.vm.network :forwarded_port, guest: 1025, host: 1025
-    server.vm.network :forwarded_port, guest: 6129, host: 6129
-    server.vm.network :forwarded_port, guest: 5225, host: 5225
-    server.vm.network :forwarded_port, guest: 1047, host: 1047
-    server.vm.network :forwarded_port, guest: 32775, host: 32775
-    server.vm.network :forwarded_port, guest: 3323, host: 3323
-    server.vm.network :forwarded_port, guest: 8031, host: 8031
-    server.vm.network :forwarded_port, guest: 32773, host: 32773
-    server.vm.network :forwarded_port, guest: 2008, host: 2008
-    server.vm.network :forwarded_port, guest: 3260, host: 3260
-    server.vm.network :forwarded_port, guest: 2007, host: 2007
-    server.vm.network :forwarded_port, guest: 8649, host: 8649
-    server.vm.network :forwarded_port, guest: 3659, host: 3659
-    server.vm.network :forwarded_port, guest: 5120, host: 5120
-    server.vm.network :forwarded_port, guest: 8193, host: 8193
-    server.vm.network :forwarded_port, guest: 1063, host: 1063
-    server.vm.network :forwarded_port, guest: 3827, host: 3827
-    server.vm.network :forwarded_port, guest: 2602, host: 2602
-    server.vm.network :forwarded_port, guest: 45100, host: 45100
-    server.vm.network :forwarded_port, guest: 1720, host: 1720
-    server.vm.network :forwarded_port, guest: 1248, host: 1248
-    server.vm.network :forwarded_port, guest: 1218, host: 1218
-    server.vm.network :forwarded_port, guest: 2100, host: 2100
-    server.vm.network :forwarded_port, guest: 8194, host: 8194
-    server.vm.network :forwarded_port, guest: 7625, host: 7625
-    server.vm.network :forwarded_port, guest: 1107, host: 1107
-    server.vm.network :forwarded_port, guest: 2869, host: 2869
-    server.vm.network :forwarded_port, guest: 4129, host: 4129
-    server.vm.network :forwarded_port, guest: 1067, host: 1067
-    server.vm.network :forwarded_port, guest: 1110, host: 1110
-    server.vm.network :forwarded_port, guest: 13783, host: 13783
-    server.vm.network :forwarded_port, guest: 3351, host: 3351
-    server.vm.network :forwarded_port, guest: 7777, host: 7777
-    server.vm.network :forwarded_port, guest: 2004, host: 2004
-    server.vm.network :forwarded_port, guest: 52822, host: 52822
-    server.vm.network :forwarded_port, guest: 10001, host: 10001
-    server.vm.network :forwarded_port, guest: 1433, host: 1433
-    server.vm.network :forwarded_port, guest: 8888, host: 8888
-    server.vm.network :forwarded_port, guest: 51103, host: 51103
-    server.vm.network :forwarded_port, guest: 3052, host: 3052
-    server.vm.network :forwarded_port, guest: 9001, host: 9001
-    server.vm.network :forwarded_port, guest: 5988, host: 5988
-    server.vm.network :forwarded_port, guest: 1034, host: 1034
-    server.vm.network :forwarded_port, guest: 6059, host: 6059
-    server.vm.network :forwarded_port, guest: 7911, host: 7911
-    server.vm.network :forwarded_port, guest: 5989, host: 5989
-    server.vm.network :forwarded_port, guest: 2492, host: 2492
-    server.vm.network :forwarded_port, guest: 5902, host: 5902
-    server.vm.network :forwarded_port, guest: 1104, host: 1104
-    server.vm.network :forwarded_port, guest: 2383, host: 2383
-    server.vm.network :forwarded_port, guest: 1077, host: 1077
-    server.vm.network :forwarded_port, guest: 3269, host: 3269
-    server.vm.network :forwarded_port, guest: 6667, host: 6667
-    server.vm.network :forwarded_port, guest: 3784, host: 3784
-    server.vm.network :forwarded_port, guest: 1073, host: 1073
-    server.vm.network :forwarded_port, guest: 1081, host: 1081
-    server.vm.network :forwarded_port, guest: 1043, host: 1043
-    server.vm.network :forwarded_port, guest: 5357, host: 5357
-    server.vm.network :forwarded_port, guest: 3325, host: 3325
-    server.vm.network :forwarded_port, guest: 10000, host: 10000
-    server.vm.network :forwarded_port, guest: 6123, host: 6123
-    server.vm.network :forwarded_port, guest: 1041, host: 1041
-    server.vm.network :forwarded_port, guest: 5962, host: 5962
-    server.vm.network :forwarded_port, guest: 8291, host: 8291
-    server.vm.network :forwarded_port, guest: 6004, host: 6004
-    server.vm.network :forwarded_port, guest: 2001, host: 2001
-    server.vm.network :forwarded_port, guest: 8651, host: 8651
-    server.vm.network :forwarded_port, guest: 8333, host: 8333
-    server.vm.network :forwarded_port, guest: 6788, host: 6788
-    server.vm.network :forwarded_port, guest: 1272, host: 1272
-    server.vm.network :forwarded_port, guest: 6389, host: 6389
-    server.vm.network :forwarded_port, guest: 5051, host: 5051
-    server.vm.network :forwarded_port, guest: 2811, host: 2811
-    server.vm.network :forwarded_port, guest: 2160, host: 2160
-    server.vm.network :forwarded_port, guest: 1051, host: 1051
-    server.vm.network :forwarded_port, guest: 1700, host: 1700
-    server.vm.network :forwarded_port, guest: 1080, host: 1080
-    server.vm.network :forwarded_port, guest: 1718, host: 1718
-    server.vm.network :forwarded_port, guest: 1947, host: 1947
-    server.vm.network :forwarded_port, guest: 5961, host: 5961
-    server.vm.network :forwarded_port, guest: 1148, host: 1148
-    server.vm.network :forwarded_port, guest: 1093, host: 1093
-    server.vm.network :forwarded_port, guest: 32769, host: 32769
-    server.vm.network :forwarded_port, guest: 1045, host: 1045
-    server.vm.network :forwarded_port, guest: 3300, host: 3300
-    server.vm.network :forwarded_port, guest: 5100, host: 5100
-    server.vm.network :forwarded_port, guest: 10010, host: 10010
-    server.vm.network :forwarded_port, guest: 8600, host: 8600
-    server.vm.network :forwarded_port, guest: 1863, host: 1863
-    server.vm.network :forwarded_port, guest: 3986, host: 3986
-    server.vm.network :forwarded_port, guest: 6646, host: 6646
-    server.vm.network :forwarded_port, guest: 5003, host: 5003
-    server.vm.network :forwarded_port, guest: 2605, host: 2605
-    server.vm.network :forwarded_port, guest: 2301, host: 2301
-    server.vm.network :forwarded_port, guest: 2525, host: 2525
-    server.vm.network :forwarded_port, guest: 2702, host: 2702
-    server.vm.network :forwarded_port, guest: 5060, host: 5060
-    server.vm.network :forwarded_port, guest: 4045, host: 4045
-    server.vm.network :forwarded_port, guest: 3000, host: 3000
-    server.vm.network :forwarded_port, guest: 1234, host: 1234
-    server.vm.network :forwarded_port, guest: 5566, host: 5566
-    server.vm.network :forwarded_port, guest: 5555, host: 5555
-    server.vm.network :forwarded_port, guest: 1030, host: 1030
-    server.vm.network :forwarded_port, guest: 65000, host: 65000
-    server.vm.network :forwarded_port, guest: 8009, host: 8009
-    server.vm.network :forwarded_port, guest: 5214, host: 5214
-    server.vm.network :forwarded_port, guest: 2717, host: 2717
-    server.vm.network :forwarded_port, guest: 5102, host: 5102
-    server.vm.network :forwarded_port, guest: 1935, host: 1935
-    server.vm.network :forwarded_port, guest: 1044, host: 1044
-    server.vm.network :forwarded_port, guest: 5009, host: 5009
-    server.vm.network :forwarded_port, guest: 3998, host: 3998
-    server.vm.network :forwarded_port, guest: 1311, host: 1311
-    server.vm.network :forwarded_port, guest: 5001, host: 5001
-    server.vm.network :forwarded_port, guest: 1071, host: 1071
-    server.vm.network :forwarded_port, guest: 1029, host: 1029
-    server.vm.network :forwarded_port, guest: 1310, host: 1310
-    server.vm.network :forwarded_port, guest: 23502, host: 23502
-    server.vm.network :forwarded_port, guest: 4002, host: 4002
-    server.vm.network :forwarded_port, guest: 1998, host: 1998
-    server.vm.network :forwarded_port, guest: 8994, host: 8994
-    server.vm.network :forwarded_port, guest: 5801, host: 5801
-    server.vm.network :forwarded_port, guest: 1098, host: 1098
-    server.vm.network :forwarded_port, guest: 5633, host: 5633
-    server.vm.network :forwarded_port, guest: 7100, host: 7100
-    server.vm.network :forwarded_port, guest: 8084, host: 8084
-    server.vm.network :forwarded_port, guest: 1687, host: 1687
-    server.vm.network :forwarded_port, guest: 4662, host: 4662
-    server.vm.network :forwarded_port, guest: 2105, host: 2105
-    server.vm.network :forwarded_port, guest: 5925, host: 5925
-    server.vm.network :forwarded_port, guest: 9002, host: 9002
-    server.vm.network :forwarded_port, guest: 5911, host: 5911
-    server.vm.network :forwarded_port, guest: 1097, host: 1097
-    server.vm.network :forwarded_port, guest: 9050, host: 9050
-    server.vm.network :forwarded_port, guest: 6901, host: 6901
-    server.vm.network :forwarded_port, guest: 13782, host: 13782
-    server.vm.network :forwarded_port, guest: 9009, host: 9009
-    server.vm.network :forwarded_port, guest: 49153, host: 49153
-    server.vm.network :forwarded_port, guest: 8083, host: 8083
-    server.vm.network :forwarded_port, guest: 5050, host: 5050
-    server.vm.network :forwarded_port, guest: 1035, host: 1035
-    server.vm.network :forwarded_port, guest: 2065, host: 2065
-    server.vm.network :forwarded_port, guest: 2000, host: 2000
-    server.vm.network :forwarded_port, guest: 5550, host: 5550
-    server.vm.network :forwarded_port, guest: 5631, host: 5631
-    server.vm.network :forwarded_port, guest: 8007, host: 8007
-    server.vm.network :forwarded_port, guest: 20005, host: 20005
-    server.vm.network :forwarded_port, guest: 2701, host: 2701
-    server.vm.network :forwarded_port, guest: 2809, host: 2809
-    server.vm.network :forwarded_port, guest: 9535, host: 9535
-    server.vm.network :forwarded_port, guest: 1058, host: 1058
-    server.vm.network :forwarded_port, guest: 2399, host: 2399
-    server.vm.network :forwarded_port, guest: 1027, host: 1027
-    server.vm.network :forwarded_port, guest: 1494, host: 1494
-    server.vm.network :forwarded_port, guest: 3580, host: 3580
-    server.vm.network :forwarded_port, guest: 7001, host: 7001
-    server.vm.network :forwarded_port, guest: 1083, host: 1083
-    server.vm.network :forwarded_port, guest: 1057, host: 1057
-    server.vm.network :forwarded_port, guest: 2604, host: 2604
-    server.vm.network :forwarded_port, guest: 1755, host: 1755
-    server.vm.network :forwarded_port, guest: 9415, host: 9415
-    server.vm.network :forwarded_port, guest: 2103, host: 2103
-    server.vm.network :forwarded_port, guest: 52869, host: 52869
-    server.vm.network :forwarded_port, guest: 1053, host: 1053
-    server.vm.network :forwarded_port, guest: 3001, host: 3001
-    server.vm.network :forwarded_port, guest: 8085, host: 8085
-    server.vm.network :forwarded_port, guest: 4443, host: 4443
-    server.vm.network :forwarded_port, guest: 64680, host: 64680
-    server.vm.network :forwarded_port, guest: 49155, host: 49155
-    server.vm.network :forwarded_port, guest: 5030, host: 5030
-    server.vm.network :forwarded_port, guest: 5825, host: 5825
-    server.vm.network :forwarded_port, guest: 9102, host: 9102
-    server.vm.network :forwarded_port, guest: 2030, host: 2030
-    server.vm.network :forwarded_port, guest: 32770, host: 32770
-    server.vm.network :forwarded_port, guest: 7938, host: 7938
-    server.vm.network :forwarded_port, guest: 1500, host: 1500
-    server.vm.network :forwarded_port, guest: 7741, host: 7741
-    server.vm.network :forwarded_port, guest: 8402, host: 8402
-    server.vm.network :forwarded_port, guest: 2009, host: 2009
-    server.vm.network :forwarded_port, guest: 8008, host: 8008
-    server.vm.network :forwarded_port, guest: 1024, host: 1024
-    server.vm.network :forwarded_port, guest: 2601, host: 2601
-    server.vm.network :forwarded_port, guest: 6789, host: 6789
-    server.vm.network :forwarded_port, guest: 42, host: 42
-    server.vm.network :forwarded_port, guest: 4444, host: 4444
-    server.vm.network :forwarded_port, guest: 81, host: 81
-    server.vm.network :forwarded_port, guest: 4003, host: 4003
-    server.vm.network :forwarded_port, guest: 1094, host: 1094
-    server.vm.network :forwarded_port, guest: 8001, host: 8001
-    server.vm.network :forwarded_port, guest: 4126, host: 4126
-    server.vm.network :forwarded_port, guest: 1050, host: 1050
-    server.vm.network :forwarded_port, guest: 5190, host: 5190
-    server.vm.network :forwarded_port, guest: 2190, host: 2190
-    server.vm.network :forwarded_port, guest: 9100, host: 9100
-    server.vm.network :forwarded_port, guest: 6005, host: 6005
-    server.vm.network :forwarded_port, guest: 9090, host: 9090
-    server.vm.network :forwarded_port, guest: 4242, host: 4242
-    server.vm.network :forwarded_port, guest: 3801, host: 3801
-    server.vm.network :forwarded_port, guest: 6000, host: 6000
-    server.vm.network :forwarded_port, guest: 8222, host: 8222
-    server.vm.network :forwarded_port, guest: 1521, host: 1521
-    server.vm.network :forwarded_port, guest: 2119, host: 2119
-    server.vm.network :forwarded_port, guest: 2718, host: 2718
-    server.vm.network :forwarded_port, guest: 5431, host: 5431
-    server.vm.network :forwarded_port, guest: 6580, host: 6580
-    server.vm.network :forwarded_port, guest: 9207, host: 9207
-    server.vm.network :forwarded_port, guest: 3005, host: 3005
-    server.vm.network :forwarded_port, guest: 1036, host: 1036
-    server.vm.network :forwarded_port, guest: 1074, host: 1074
-    server.vm.network :forwarded_port, guest: 42510, host: 42510
-    server.vm.network :forwarded_port, guest: 1060, host: 1060
-    server.vm.network :forwarded_port, guest: 5222, host: 5222
-    server.vm.network :forwarded_port, guest: 49154, host: 49154
-    server.vm.network :forwarded_port, guest: 9071, host: 9071
-    server.vm.network :forwarded_port, guest: 5800, host: 5800
-    server.vm.network :forwarded_port, guest: 2401, host: 2401
-    server.vm.network :forwarded_port, guest: 3703, host: 3703
-    server.vm.network :forwarded_port, guest: 2006, host: 2006
-    server.vm.network :forwarded_port, guest: 3268, host: 3268
-    server.vm.network :forwarded_port, guest: 1038, host: 1038
-    server.vm.network :forwarded_port, guest: 4899, host: 4899
-    server.vm.network :forwarded_port, guest: 20828, host: 20828
-    server.vm.network :forwarded_port, guest: 3301, host: 3301
-    server.vm.network :forwarded_port, guest: 9999, host: 9999
-    server.vm.network :forwarded_port, guest: 1501, host: 1501
-    server.vm.network :forwarded_port, guest: 55555, host: 55555
-    server.vm.network :forwarded_port, guest: 5718, host: 5718
-    server.vm.network :forwarded_port, guest: 1086, host: 1086
-    server.vm.network :forwarded_port, guest: 1352, host: 1352
-    server.vm.network :forwarded_port, guest: 1039, host: 1039
-    server.vm.network :forwarded_port, guest: 1028, host: 1028
-    server.vm.network :forwarded_port, guest: 5810, host: 5810
-    server.vm.network :forwarded_port, guest: 7106, host: 7106
-    server.vm.network :forwarded_port, guest: 8087, host: 8087
-    server.vm.network :forwarded_port, guest: 1054, host: 1054
-    server.vm.network :forwarded_port, guest: 49152, host: 49152
-    server.vm.network :forwarded_port, guest: 8443, host: 8443
-    server.vm.network :forwarded_port, guest: 2121, host: 2121
-    server.vm.network :forwarded_port, guest: 7070, host: 7070
-    server.vm.network :forwarded_port, guest: 3367, host: 3367
-    server.vm.network :forwarded_port, guest: 1717, host: 1717
-    server.vm.network :forwarded_port, guest: 55600, host: 55600
-    server.vm.network :forwarded_port, guest: 50000, host: 50000
-    server.vm.network :forwarded_port, guest: 1078, host: 1078
-    server.vm.network :forwarded_port, guest: 1052, host: 1052
-    server.vm.network :forwarded_port, guest: 1068, host: 1068
-    server.vm.network :forwarded_port, guest: 1040, host: 1040
-    server.vm.network :forwarded_port, guest: 6969, host: 6969
-    server.vm.network :forwarded_port, guest: 8010, host: 8010
-    server.vm.network :forwarded_port, guest: 49999, host: 49999
-    server.vm.network :forwarded_port, guest: 1046, host: 1046
-    server.vm.network :forwarded_port, guest: 8652, host: 8652
-    server.vm.network :forwarded_port, guest: 1072, host: 1072
-    server.vm.network :forwarded_port, guest: 5666, host: 5666
-    server.vm.network :forwarded_port, guest: 1082, host: 1082
-    server.vm.network :forwarded_port, guest: 7, host: 7
-    server.vm.network :forwarded_port, guest: 6001, host: 6001
-    server.vm.network :forwarded_port, guest: 7778, host: 7778
-    server.vm.network :forwarded_port, guest: 32771, host: 32771
-    server.vm.network :forwarded_port, guest: 1064, host: 1064
-    server.vm.network :forwarded_port, guest: 3690, host: 3690
-    server.vm.network :forwarded_port, guest: 1840, host: 1840
-    server.vm.network :forwarded_port, guest: 33354, host: 33354
-    server.vm.network :forwarded_port, guest: 5987, host: 5987
-    server.vm.network :forwarded_port, guest: 4001, host: 4001
-    server.vm.network :forwarded_port, guest: 1088, host: 1088
-    server.vm.network :forwarded_port, guest: 1042, host: 1042
-    server.vm.network :forwarded_port, guest: 3128, host: 3128
-    server.vm.network :forwarded_port, guest: 5432, host: 5432
-    server.vm.network :forwarded_port, guest: 1033, host: 1033
-    server.vm.network :forwarded_port, guest: 2381, host: 2381
-    server.vm.network :forwarded_port, guest: 9593, host: 9593
-    server.vm.network :forwarded_port, guest: 65389, host: 65389
-    server.vm.network :forwarded_port, guest: 1026, host: 1026
-    server.vm.network :forwarded_port, guest: 32774, host: 32774
-    server.vm.network :forwarded_port, guest: 3766, host: 3766
-    server.vm.network :forwarded_port, guest: 8192, host: 8192
-    server.vm.network :forwarded_port, guest: 1031, host: 1031
-    server.vm.network :forwarded_port, guest: 6881, host: 6881
-    server.vm.network :forwarded_port, guest: 16993, host: 16993
-    server.vm.network :forwarded_port, guest: 1061, host: 1061
-    server.vm.network :forwarded_port, guest: 2260, host: 2260
-    server.vm.network :forwarded_port, guest: 7200, host: 7200
-    server.vm.network :forwarded_port, guest: 2005, host: 2005
-    server.vm.network :forwarded_port, guest: 1049, host: 1049
-    server.vm.network :forwarded_port, guest: 64623, host: 64623
-    server.vm.network :forwarded_port, guest: 7627, host: 7627
-    server.vm.network :forwarded_port, guest: 32768, host: 32768
-    server.vm.network :forwarded_port, guest: 9595, host: 9595
-    server.vm.network :forwarded_port, guest: 49157, host: 49157
-    server.vm.network :forwarded_port, guest: 1059, host: 1059
-    server.vm.network :forwarded_port, guest: 1900, host: 1900
-    server.vm.network :forwarded_port, guest: 2161, host: 2161
-    server.vm.network :forwarded_port, guest: 3031, host: 3031
-    server.vm.network :forwarded_port, guest: 465, host: 465
-    server.vm.network :forwarded_port, guest: 3689, host: 3689
-    server.vm.network :forwarded_port, guest: 3283, host: 3283
-    server.vm.network :forwarded_port, guest: 1056, host: 1056
-    server.vm.network :forwarded_port, guest: 1085, host: 1085
-    server.vm.network :forwarded_port, guest: 2135, host: 2135
-    server.vm.network :forwarded_port, guest: 1111, host: 1111
-    server.vm.network :forwarded_port, guest: 12345, host: 12345
-    server.vm.network :forwarded_port, guest: 8089, host: 8089
-    server.vm.network :forwarded_port, guest: 1065, host: 1065
-    server.vm.network :forwarded_port, guest: 2003, host: 2003
-    server.vm.network :forwarded_port, guest: 2107, host: 2107
-    server.vm.network :forwarded_port, guest: 14238, host: 14238
-    server.vm.network :forwarded_port, guest: 1169, host: 1169
-    server.vm.network :forwarded_port, guest: 16992, host: 16992
-    server.vm.network :forwarded_port, guest: 12000, host: 12000
-    server.vm.network :forwarded_port, guest: 2875, host: 2875
-    server.vm.network :forwarded_port, guest: 1055, host: 1055
-    server.vm.network :forwarded_port, guest: 7000, host: 7000
-    server.vm.network :forwarded_port, guest: 8400, host: 8400
-    server.vm.network :forwarded_port, guest: 6112, host: 6112
-    server.vm.network :forwarded_port, guest: 1108, host: 1108
-    server.vm.network :forwarded_port, guest: 5226, host: 5226
-    server.vm.network :forwarded_port, guest: 2607, host: 2607
-    server.vm.network :forwarded_port, guest: 8081, host: 8081
-    server.vm.network :forwarded_port, guest: 8088, host: 8088
-    server.vm.network :forwarded_port, guest: 9101, host: 9101
-    server.vm.network :forwarded_port, guest: 5500, host: 5500
-    server.vm.network :forwarded_port, guest: 3017, host: 3017
-    server.vm.network :forwarded_port, guest: 2002, host: 2002
-    server.vm.network :forwarded_port, guest: 8002, host: 8002
-    server.vm.network :forwarded_port, guest: 7019, host: 7019
-    server.vm.network :forwarded_port, guest: 1099, host: 1099
-    server.vm.network :forwarded_port, guest: 3071, host: 3071
-    server.vm.network :forwarded_port, guest: 8181, host: 8181
-    server.vm.network :forwarded_port, guest: 1032, host: 1032
-    server.vm.network :forwarded_port, guest: 1761, host: 1761
-    server.vm.network :forwarded_port, guest: 1037, host: 1037
-    server.vm.network :forwarded_port, guest: 1062, host: 1062
-    server.vm.network :forwarded_port, guest: 6002, host: 6002
-    server.vm.network :forwarded_port, guest: 1070, host: 1070
-    server.vm.network :forwarded_port, guest: 6101, host: 6101
-    server.vm.network :forwarded_port, guest: 2010, host: 2010
-    server.vm.network :forwarded_port, guest: 9000, host: 9000
-    server.vm.network :forwarded_port, guest: 2967, host: 2967
-    server.vm.network :forwarded_port, guest: 6666, host: 6666
-    server.vm.network :forwarded_port, guest: 1100, host: 1100
-    server.vm.network :forwarded_port, guest: 8086, host: 8086
-    server.vm.network :forwarded_port, guest: 8082, host: 8082
-    server.vm.network :forwarded_port, guest: 5004, host: 5004
-    server.vm.network :forwarded_port, guest: 5679, host: 5679
-    server.vm.network :forwarded_port, guest: 5101, host: 5101
-    server.vm.network :forwarded_port, guest: 32772, host: 32772
-    server.vm.network :forwarded_port, guest: 6156, host: 6156
-    server.vm.network :forwarded_port, guest: 5901, host: 5901
-    server.vm.network :forwarded_port, guest: 9594, host: 9594
-    server.vm.network :forwarded_port, guest: 3211, host: 3211
-    server.vm.network :forwarded_port, guest: 49156, host: 49156
-    server.vm.network :forwarded_port, guest: 7937, host: 7937
-    server.vm.network :forwarded_port, guest: 1048, host: 1048
-    server.vm.network :forwarded_port, guest: 8021, host: 8021
-    server.vm.network :forwarded_port, guest: 1096, host: 1096
-    server.vm.network :forwarded_port, guest: 4000, host: 4000
-    server.vm.network :forwarded_port, guest: 1079, host: 1079
-    server.vm.network :forwarded_port, guest: 1106, host: 1106
-    server.vm.network :forwarded_port, guest: 1503, host: 1503
-    server.vm.network :forwarded_port, guest: 10243, host: 10243
-    server.vm.network :forwarded_port, guest: 1783, host: 1783
-    server.vm.network :forwarded_port, guest: 1666, host: 1666
-    server.vm.network :forwarded_port, guest: 6543, host: 6543
-    server.vm.network :forwarded_port, guest: 15000, host: 15000
-    server.vm.network :forwarded_port, guest: 5269, host: 5269
-    server.vm.network :forwarded_port, guest: 8899, host: 8899
-    server.vm.network :forwarded_port, guest: 5414, host: 5414
-    server.vm.network :forwarded_port, guest: 2144, host: 2144
-    server.vm.network :forwarded_port, guest: 3404, host: 3404
-    server.vm.network :forwarded_port, guest: 27000, host: 27000
-    server.vm.network :forwarded_port, guest: 3476, host: 3476
-    server.vm.network :forwarded_port, guest: 4449, host: 4449
-    server.vm.network :forwarded_port, guest: 1801, host: 1801
-    server.vm.network :forwarded_port, guest: 5960, host: 5960
-    server.vm.network :forwarded_port, guest: 8701, host: 8701
-    server.vm.network :forwarded_port, guest: 2222, host: 2222
-    server.vm.network :forwarded_port, guest: 8873, host: 8873
-    server.vm.network :forwarded_port, guest: 2500, host: 2500
-    server.vm.network :forwarded_port, guest: 1864, host: 1864
-    server.vm.network :forwarded_port, guest: 5910, host: 5910
-    server.vm.network :forwarded_port, guest: 3551, host: 3551
-    server.vm.network :forwarded_port, guest: 9876, host: 9876
-    server.vm.network :forwarded_port, guest: 5877, host: 5877
-    server.vm.network :forwarded_port, guest: 1066, host: 1066
-    server.vm.network :forwarded_port, guest: 8000, host: 8000
-    server.vm.network :forwarded_port, guest: 3333, host: 3333
-    server.vm.network :forwarded_port, guest: 5002, host: 5002
-    server.vm.network :forwarded_port, guest: 50001, host: 50001
-    server.vm.network :forwarded_port, guest: 1075, host: 1075
-    server.vm.network :forwarded_port, guest: 5959, host: 5959
-    server.vm.network :forwarded_port, guest: 2049, host: 2049
-    server.vm.network :forwarded_port, guest: 1069, host: 1069
-    server.vm.network :forwarded_port, guest: 35500, host: 35500
+    server.vm.network :forwarded_port, guest: 993, host: 993, auto_correct: true
+    server.vm.network :forwarded_port, guest: 25, host: 25, auto_correct: true
+    server.vm.network :forwarded_port, guest: 22, host: 22, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3389, host: 3389, auto_correct: true
+    server.vm.network :forwarded_port, guest: 80, host: 80, auto_correct: true
+    server.vm.network :forwarded_port, guest: 995, host: 995, auto_correct: true
+    server.vm.network :forwarded_port, guest: 23, host: 23, auto_correct: true
+    server.vm.network :forwarded_port, guest: 110, host: 110, auto_correct: true
+    server.vm.network :forwarded_port, guest: 135, host: 135, auto_correct: true
+    server.vm.network :forwarded_port, guest: 21, host: 21, auto_correct: true
+    server.vm.network :forwarded_port, guest: 143, host: 143, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3306, host: 3306, auto_correct: true
+    server.vm.network :forwarded_port, guest: 445, host: 445, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8080, host: 8080, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5900, host: 5900, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1723, host: 1723, auto_correct: true
+    server.vm.network :forwarded_port, guest: 443, host: 443, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1025, host: 1025, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6129, host: 6129, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5225, host: 5225, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1047, host: 1047, auto_correct: true
+    server.vm.network :forwarded_port, guest: 32775, host: 32775, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3323, host: 3323, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8031, host: 8031, auto_correct: true
+    server.vm.network :forwarded_port, guest: 32773, host: 32773, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2008, host: 2008, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3260, host: 3260, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2007, host: 2007, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8649, host: 8649, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3659, host: 3659, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5120, host: 5120, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8193, host: 8193, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1063, host: 1063, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3827, host: 3827, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2602, host: 2602, auto_correct: true
+    server.vm.network :forwarded_port, guest: 45100, host: 45100, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1720, host: 1720, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1248, host: 1248, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1218, host: 1218, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2100, host: 2100, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8194, host: 8194, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7625, host: 7625, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1107, host: 1107, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2869, host: 2869, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4129, host: 4129, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1067, host: 1067, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1110, host: 1110, auto_correct: true
+    server.vm.network :forwarded_port, guest: 13783, host: 13783, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3351, host: 3351, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7777, host: 7777, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2004, host: 2004, auto_correct: true
+    server.vm.network :forwarded_port, guest: 52822, host: 52822, auto_correct: true
+    server.vm.network :forwarded_port, guest: 10001, host: 10001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1433, host: 1433, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8888, host: 8888, auto_correct: true
+    server.vm.network :forwarded_port, guest: 51103, host: 51103, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3052, host: 3052, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9001, host: 9001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5988, host: 5988, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1034, host: 1034, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6059, host: 6059, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7911, host: 7911, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5989, host: 5989, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2492, host: 2492, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5902, host: 5902, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1104, host: 1104, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2383, host: 2383, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1077, host: 1077, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3269, host: 3269, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6667, host: 6667, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3784, host: 3784, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1073, host: 1073, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1081, host: 1081, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1043, host: 1043, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5357, host: 5357, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3325, host: 3325, auto_correct: true
+    server.vm.network :forwarded_port, guest: 10000, host: 10000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6123, host: 6123, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1041, host: 1041, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5962, host: 5962, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8291, host: 8291, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6004, host: 6004, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2001, host: 2001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8651, host: 8651, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8333, host: 8333, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6788, host: 6788, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1272, host: 1272, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6389, host: 6389, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5051, host: 5051, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2811, host: 2811, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2160, host: 2160, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1051, host: 1051, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1700, host: 1700, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1080, host: 1080, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1718, host: 1718, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1947, host: 1947, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5961, host: 5961, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1148, host: 1148, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1093, host: 1093, auto_correct: true
+    server.vm.network :forwarded_port, guest: 32769, host: 32769, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1045, host: 1045, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3300, host: 3300, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5100, host: 5100, auto_correct: true
+    server.vm.network :forwarded_port, guest: 10010, host: 10010, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8600, host: 8600, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1863, host: 1863, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3986, host: 3986, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6646, host: 6646, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5003, host: 5003, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2605, host: 2605, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2301, host: 2301, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2525, host: 2525, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2702, host: 2702, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5060, host: 5060, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4045, host: 4045, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3000, host: 3000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1234, host: 1234, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5566, host: 5566, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5555, host: 5555, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1030, host: 1030, auto_correct: true
+    server.vm.network :forwarded_port, guest: 65000, host: 65000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8009, host: 8009, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5214, host: 5214, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2717, host: 2717, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5102, host: 5102, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1935, host: 1935, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1044, host: 1044, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5009, host: 5009, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3998, host: 3998, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1311, host: 1311, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5001, host: 5001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1071, host: 1071, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1029, host: 1029, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1310, host: 1310, auto_correct: true
+    server.vm.network :forwarded_port, guest: 23502, host: 23502, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4002, host: 4002, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1998, host: 1998, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8994, host: 8994, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5801, host: 5801, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1098, host: 1098, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5633, host: 5633, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7100, host: 7100, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8084, host: 8084, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1687, host: 1687, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4662, host: 4662, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2105, host: 2105, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5925, host: 5925, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9002, host: 9002, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5911, host: 5911, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1097, host: 1097, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9050, host: 9050, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6901, host: 6901, auto_correct: true
+    server.vm.network :forwarded_port, guest: 13782, host: 13782, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9009, host: 9009, auto_correct: true
+    server.vm.network :forwarded_port, guest: 49153, host: 49153, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8083, host: 8083, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5050, host: 5050, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1035, host: 1035, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2065, host: 2065, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2000, host: 2000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5550, host: 5550, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5631, host: 5631, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8007, host: 8007, auto_correct: true
+    server.vm.network :forwarded_port, guest: 20005, host: 20005, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2701, host: 2701, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2809, host: 2809, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9535, host: 9535, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1058, host: 1058, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2399, host: 2399, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1027, host: 1027, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1494, host: 1494, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3580, host: 3580, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7001, host: 7001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1083, host: 1083, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1057, host: 1057, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2604, host: 2604, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1755, host: 1755, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9415, host: 9415, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2103, host: 2103, auto_correct: true
+    server.vm.network :forwarded_port, guest: 52869, host: 52869, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1053, host: 1053, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3001, host: 3001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8085, host: 8085, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4443, host: 4443, auto_correct: true
+    server.vm.network :forwarded_port, guest: 64680, host: 64680, auto_correct: true
+    server.vm.network :forwarded_port, guest: 49155, host: 49155, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5030, host: 5030, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5825, host: 5825, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9102, host: 9102, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2030, host: 2030, auto_correct: true
+    server.vm.network :forwarded_port, guest: 32770, host: 32770, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7938, host: 7938, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1500, host: 1500, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7741, host: 7741, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8402, host: 8402, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2009, host: 2009, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8008, host: 8008, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1024, host: 1024, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2601, host: 2601, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6789, host: 6789, auto_correct: true
+    server.vm.network :forwarded_port, guest: 42, host: 42, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4444, host: 4444, auto_correct: true
+    server.vm.network :forwarded_port, guest: 81, host: 81, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4003, host: 4003, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1094, host: 1094, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8001, host: 8001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4126, host: 4126, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1050, host: 1050, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5190, host: 5190, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2190, host: 2190, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9100, host: 9100, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6005, host: 6005, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9090, host: 9090, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4242, host: 4242, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3801, host: 3801, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6000, host: 6000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8222, host: 8222, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1521, host: 1521, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2119, host: 2119, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2718, host: 2718, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5431, host: 5431, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6580, host: 6580, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9207, host: 9207, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3005, host: 3005, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1036, host: 1036, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1074, host: 1074, auto_correct: true
+    server.vm.network :forwarded_port, guest: 42510, host: 42510, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1060, host: 1060, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5222, host: 5222, auto_correct: true
+    server.vm.network :forwarded_port, guest: 49154, host: 49154, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9071, host: 9071, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5800, host: 5800, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2401, host: 2401, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3703, host: 3703, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2006, host: 2006, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3268, host: 3268, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1038, host: 1038, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4899, host: 4899, auto_correct: true
+    server.vm.network :forwarded_port, guest: 20828, host: 20828, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3301, host: 3301, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9999, host: 9999, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1501, host: 1501, auto_correct: true
+    server.vm.network :forwarded_port, guest: 55555, host: 55555, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5718, host: 5718, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1086, host: 1086, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1352, host: 1352, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1039, host: 1039, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1028, host: 1028, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5810, host: 5810, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7106, host: 7106, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8087, host: 8087, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1054, host: 1054, auto_correct: true
+    server.vm.network :forwarded_port, guest: 49152, host: 49152, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8443, host: 8443, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2121, host: 2121, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7070, host: 7070, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3367, host: 3367, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1717, host: 1717, auto_correct: true
+    server.vm.network :forwarded_port, guest: 55600, host: 55600, auto_correct: true
+    server.vm.network :forwarded_port, guest: 50000, host: 50000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1078, host: 1078, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1052, host: 1052, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1068, host: 1068, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1040, host: 1040, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6969, host: 6969, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8010, host: 8010, auto_correct: true
+    server.vm.network :forwarded_port, guest: 49999, host: 49999, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1046, host: 1046, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8652, host: 8652, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1072, host: 1072, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5666, host: 5666, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1082, host: 1082, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7, host: 7, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6001, host: 6001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7778, host: 7778, auto_correct: true
+    server.vm.network :forwarded_port, guest: 32771, host: 32771, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1064, host: 1064, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3690, host: 3690, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1840, host: 1840, auto_correct: true
+    server.vm.network :forwarded_port, guest: 33354, host: 33354, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5987, host: 5987, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4001, host: 4001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1088, host: 1088, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1042, host: 1042, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3128, host: 3128, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5432, host: 5432, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1033, host: 1033, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2381, host: 2381, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9593, host: 9593, auto_correct: true
+    server.vm.network :forwarded_port, guest: 65389, host: 65389, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1026, host: 1026, auto_correct: true
+    server.vm.network :forwarded_port, guest: 32774, host: 32774, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3766, host: 3766, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8192, host: 8192, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1031, host: 1031, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6881, host: 6881, auto_correct: true
+    server.vm.network :forwarded_port, guest: 16993, host: 16993, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1061, host: 1061, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2260, host: 2260, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7200, host: 7200, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2005, host: 2005, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1049, host: 1049, auto_correct: true
+    server.vm.network :forwarded_port, guest: 64623, host: 64623, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7627, host: 7627, auto_correct: true
+    server.vm.network :forwarded_port, guest: 32768, host: 32768, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9595, host: 9595, auto_correct: true
+    server.vm.network :forwarded_port, guest: 49157, host: 49157, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1059, host: 1059, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1900, host: 1900, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2161, host: 2161, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3031, host: 3031, auto_correct: true
+    server.vm.network :forwarded_port, guest: 465, host: 465, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3689, host: 3689, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3283, host: 3283, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1056, host: 1056, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1085, host: 1085, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2135, host: 2135, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1111, host: 1111, auto_correct: true
+    server.vm.network :forwarded_port, guest: 12345, host: 12345, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8089, host: 8089, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1065, host: 1065, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2003, host: 2003, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2107, host: 2107, auto_correct: true
+    server.vm.network :forwarded_port, guest: 14238, host: 14238, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1169, host: 1169, auto_correct: true
+    server.vm.network :forwarded_port, guest: 16992, host: 16992, auto_correct: true
+    server.vm.network :forwarded_port, guest: 12000, host: 12000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2875, host: 2875, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1055, host: 1055, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7000, host: 7000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8400, host: 8400, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6112, host: 6112, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1108, host: 1108, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5226, host: 5226, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2607, host: 2607, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8081, host: 8081, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8088, host: 8088, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9101, host: 9101, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5500, host: 5500, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3017, host: 3017, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2002, host: 2002, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8002, host: 8002, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7019, host: 7019, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1099, host: 1099, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3071, host: 3071, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8181, host: 8181, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1032, host: 1032, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1761, host: 1761, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1037, host: 1037, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1062, host: 1062, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6002, host: 6002, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1070, host: 1070, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6101, host: 6101, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2010, host: 2010, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9000, host: 9000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2967, host: 2967, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6666, host: 6666, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1100, host: 1100, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8086, host: 8086, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8082, host: 8082, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5004, host: 5004, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5679, host: 5679, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5101, host: 5101, auto_correct: true
+    server.vm.network :forwarded_port, guest: 32772, host: 32772, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6156, host: 6156, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5901, host: 5901, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9594, host: 9594, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3211, host: 3211, auto_correct: true
+    server.vm.network :forwarded_port, guest: 49156, host: 49156, auto_correct: true
+    server.vm.network :forwarded_port, guest: 7937, host: 7937, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1048, host: 1048, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8021, host: 8021, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1096, host: 1096, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4000, host: 4000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1079, host: 1079, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1106, host: 1106, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1503, host: 1503, auto_correct: true
+    server.vm.network :forwarded_port, guest: 10243, host: 10243, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1783, host: 1783, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1666, host: 1666, auto_correct: true
+    server.vm.network :forwarded_port, guest: 6543, host: 6543, auto_correct: true
+    server.vm.network :forwarded_port, guest: 15000, host: 15000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5269, host: 5269, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8899, host: 8899, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5414, host: 5414, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2144, host: 2144, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3404, host: 3404, auto_correct: true
+    server.vm.network :forwarded_port, guest: 27000, host: 27000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3476, host: 3476, auto_correct: true
+    server.vm.network :forwarded_port, guest: 4449, host: 4449, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1801, host: 1801, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5960, host: 5960, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8701, host: 8701, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2222, host: 2222, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8873, host: 8873, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2500, host: 2500, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1864, host: 1864, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5910, host: 5910, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3551, host: 3551, auto_correct: true
+    server.vm.network :forwarded_port, guest: 9876, host: 9876, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5877, host: 5877, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1066, host: 1066, auto_correct: true
+    server.vm.network :forwarded_port, guest: 8000, host: 8000, auto_correct: true
+    server.vm.network :forwarded_port, guest: 3333, host: 3333, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5002, host: 5002, auto_correct: true
+    server.vm.network :forwarded_port, guest: 50001, host: 50001, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1075, host: 1075, auto_correct: true
+    server.vm.network :forwarded_port, guest: 5959, host: 5959, auto_correct: true
+    server.vm.network :forwarded_port, guest: 2049, host: 2049, auto_correct: true
+    server.vm.network :forwarded_port, guest: 1069, host: 1069, auto_correct: true
+    server.vm.network :forwarded_port, guest: 35500, host: 35500, auto_correct: true
+
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
