@@ -26,7 +26,7 @@
 
     #TPot install
     - name: Copy T-Pot configuration file
-      command: cp /root/tpot/iso/installer/tpot.conf.dist /root/tpot.conf
+      command: cp /home/vagrant/squiDeploy/TPot/tpot.conf.dist /root/tpot.conf
 
     - name: Change permissions of tpot config file
       command: chmod 0644 /root/tpot.conf
