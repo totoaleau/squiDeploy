@@ -1,2 +1,2 @@
-./vagrant/
-TPot/.vagrant/
+./vagrant/**
+TPot/.vagrant/**
